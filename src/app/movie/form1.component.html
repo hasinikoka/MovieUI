@@ -1,0 +1,12 @@
+<form (ngSubmit)="handleFormSubmit()" [formGroup]="movieForm">
+<div class="form-group">
+<label for="movieName">MovieName</label>
+<input type="text" class="form-control" formControlName="movieName" >
+<div class="alert alert-danger" *ngIf="movieForm.get('movieName').touched && movieForm.get('movieName').invalid ">
+<div *ngIf="movieForm.get('movieName').errors.required">
+    Enter correct movieName!!!!
+</div> 
+</div>
+<button class="btn btn-primary" type="submit" [disabled]="movieForm.invalid">Submit</button> 
+</div> 
+</form>
